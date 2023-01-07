@@ -2,9 +2,11 @@ alunos = []
 inf = []
 nota = []
 k = 0
+
 print('-~-'*10)
 print('{:=^30}'.format('Escola Baixa Média'))
 print('-~-'*10)
+
 while True:
     k += 1
     print(f'-=--=--=-{k}° Aluno-=--=--=-')
@@ -22,8 +24,10 @@ while True:
     if resp == 'n':
         print('')
         break
+
 print('{:-^42}'.format('Boletim de Resultados'))
 print('{:^4}|{:^12}|{:^8}|{:^15}'.format('N°', 'Nomes', 'Médias', 'Estado'))
+
 for i in alunos:
     print('\033[4;1m{:^4} {:^12} '.format(alunos.index(i) + 1, i[0]), end='')
     print('{:^8.1f} '.format(i[2]), end='')
@@ -33,6 +37,7 @@ for i in alunos:
         print('{:^15}'.format('Recuperação'))
     else:
         print('{:^15}'.format('Reprovado'))
+
 while True:
     resp = int(input('\n\033[mDigite o Número do aluno e saiba a nota dele(a): ')) - 1
     if  0 > resp or resp >= len(alunos):
